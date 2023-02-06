@@ -1,14 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Wellcome from '../bai2/Wellcome'
-import Huongdan from '../bai2/Huongdan'
-import Start from '../bai2/Start'
-import Loading from '../bai2/Loading'
-import QRcode from '../bai2/QRcode'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Wellcome from '../AquafinaApp/Components/Wellcome'
+import Huongdan from '../AquafinaApp/Components/Huongdan'
+import Start from '../AquafinaApp/Components/Start'
+import Loading from '../AquafinaApp/Components/Loading'
+import Loadingnext from '../AquafinaApp/Components/Loadingnext'
+import QRcode from '../AquafinaApp/Components/QRcode'
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
-  return (
-    <View >
-      <QRcode></QRcode>
-    </View>
+  return ( 
+      <NavigationContainer>
+       <Stack.Navigator initialRouteName="Wellcome" screenOptions={{headerShown:false}}>
+        <Stack.Screen name="Wellcome" component={Wellcome}></Stack.Screen>
+        <Stack.Screen name="Huongdan" component={Huongdan}></Stack.Screen>
+        <Stack.Screen name="Start" component={Start}></Stack.Screen>
+        <Stack.Screen name="Loading" component={Loading}></Stack.Screen>
+        <Stack.Screen name="Loadingnext" component={Loadingnext}></Stack.Screen>
+        <Stack.Screen name="QRcode" component={QRcode}></Stack.Screen>
+
+       </Stack.Navigator>
+       </NavigationContainer>
   );
 }
