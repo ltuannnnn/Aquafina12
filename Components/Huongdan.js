@@ -7,8 +7,13 @@ export default Huongdan= ({navigation}) =>{
     
     <View style={styles.container}>
       <Image style={styles.text1}  source={require('../IMG/text1.png')}></Image>
+      
       <Text style={styles.txt1}>HƯỚNG DẪN THAM GIA</Text>
-      <Image style={styles.bg} source={require('../IMG/bg.png')}></Image>
+      <ImageBackground style={styles.bg} source={require('../IMG/bg.png')}>
+      <TouchableOpacity onPress={() =>{navigation.navigate('Wellcome')}}>
+      <Image style={styles.back}  source={require('../IMG/back.png')}></Image>
+      </TouchableOpacity>
+      </ImageBackground>
       <TouchableOpacity onPress={() =>{navigation.navigate('Start')}}>
       <Image style={styles.btn2} source={require('../IMG/btn2.png')}></Image>
       </TouchableOpacity>
@@ -47,6 +52,13 @@ const styles = StyleSheet.create({
         width:130,
         height:130,
         marginLeft:140
+    },
+    back:{
+      marginLeft:10,
+      marginTop:10,
+      position: 'absolute',
+      width:40,
+      height:40,
     }
 
 });

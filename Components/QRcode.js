@@ -7,7 +7,7 @@ export default QRcode = function App() {
     
     <View style={styles.container}>
       <Image style={styles.text1}  source={require('../IMG/text1.png')}></Image>
-      <Text style={styles.txt1}>TRẠM TÁI SINH AQUAFINA</Text>
+      <Text style={styles.txt1}>TRẠM TÁI SINH ngu</Text>
       <Image style={styles.bg3} source={require('../IMG/bg3.png')}></Image>
       <Image style={styles.btn4} source={require('../IMG/btn4.png')}></Image>
     </View>

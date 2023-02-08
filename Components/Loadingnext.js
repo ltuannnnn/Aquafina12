@@ -15,7 +15,6 @@ const Loadingnext = ({ navigation }) => {
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Image style={styles.kihieuModal} source={kihieu} />
             <Text style={styles.modalText}>Bạn có muốn tích điểm đổi quà không?</Text>
             <Text style={styles.txtcode}>Bật camera trên điện thoại để quét QR code</Text>
              <Image style={styles.imgStartM} source={xacnhan} />
@@ -39,7 +38,6 @@ const Loadingnext = ({ navigation }) => {
           </View>
         </View>
       </Modal>
-            <Image style={styles.logo} source={logo} />
             <Text style={styles.txt1}>CHAI NHỰA ĐANG ĐƯỢC XỬ LÝ...</Text>
             <View style={styles.container}>
                 <Image style={styles.kihieu} source={kihieu} />
@@ -49,10 +47,8 @@ const Loadingnext = ({ navigation }) => {
                     <Image style={styles.back} source={back} />
                 </TouchableOpacity>
                 <Text style={styles.txtTram}>TRẠM</Text>
-                <Image style={styles.locxoay} source={locxoay} />
                 <Text style={styles.txtTaiSinh}>TÁI SINH</Text>
                 <Text style={styles.txtCua}>của AQUAFINA</Text>
-                <Image style={styles.khung1} source={Aqua} />
                 <Text style={styles.txt2}>Tự động kết thúc sau:</Text>
                 <Text style={styles.txt3}>30 giây nữa </Text>
                 <View style={styles.circle}>
@@ -61,8 +57,6 @@ const Loadingnext = ({ navigation }) => {
                         <Text style={styles.txtP}>ĐIỂM</Text>
                     </View>
                 </View>
-                <Image style={styles.imgStart} source={xacnhan} />
-                <Image style={styles.imgmuiten} source={muiten} />
 
                 <TouchableOpacity style={styles.btnB}
                     onPress={() => setModalVisible(!modalVisible)
