@@ -3,6 +3,7 @@ import { Text, StyleSheet, View, Image, TouchableOpacity ,Modal,Pressable, Image
 
 export default Loading = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [modal2, setModal2] = useState(false);
 
   return (
 
@@ -20,15 +21,32 @@ export default Loading = ({ navigation }) => {
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Bạn có muốn tích điểm đổi quà không?</Text>
             <Text style={styles.txtcode}>Bật camera trên điện thoại để quét QR code</Text>
-            <TouchableOpacity style={styles.btnT}onPress={() =>{navigation.navigate('Huongdan')}}>
+            <TouchableOpacity style={styles.btnT}onPress={() =>{setModalVisible(!modalVisible)&navigation.navigate('QRcode')}}>
               <Text style={styles.txtT}>TÍCH ĐIỂM</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btnK}onPress={() => setModalVisible(!modalVisible)}>
-              
+            <TouchableOpacity style={styles.btnK}  onPress={() =>setModalVisible(!modalVisible)&setModal2(!modal2) }>
               <Text style={styles.txtK}>KHÔNG</Text>
             </TouchableOpacity>
           </View>
         </View>
+      </Modal>
+      <Modal animationType="slide"
+        transparent={true}
+        visible={modal2}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setModal2(!modal2);
+        }}>
+            <View style={styles.centeredView}>
+            <View style={styles.modalView2}>
+            
+               <ImageBackground style={styles.Popup}  source={require('../IMG/Popup.png')}>
+               <TouchableOpacity onPress={() =>{navigation.navigate('Wellcome')}}>
+            <Image style={styles.btn2}  source={require('../IMG/btn2.png')}></Image>
+               </TouchableOpacity>
+               </ImageBackground>
+            </View>
+            </View>
       </Modal>
 
       <Image style={styles.text1} source={require('../IMG/text1.png')}></Image>
@@ -93,6 +111,24 @@ const styles = StyleSheet.create({
     position:"absolute",
     width:400,
     height:400,
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity:2,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalView2: {
+    position:"absolute",
+    width:400,
+    height:500,
     margin: 20,
     backgroundColor: 'white',
     borderRadius: 20,
@@ -211,6 +247,18 @@ btnK: {
     position: 'absolute',
     width:40,
     height:40,
+  },
+  Popup:{
+    position:"absolute",
+    width:360,
+    height:490,
+  },
+  btn2:{
+    marginLeft:119,
+    marginTop:372,
+    position:"absolute",
+    width:120,
+    height:120,
   }
 
 });
