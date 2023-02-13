@@ -7,6 +7,7 @@ import Huongdan from '../AquafinaApp/Components/Huongdan'
 import Start from '../AquafinaApp/Components/Start'
 import Loading from '../AquafinaApp/Components/Loading'
 import QRcode from '../AquafinaApp/Components/QRcode'
+import QRcodettg from './Components/QRcodettg';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ export default function App() {
         <Stack.Screen name="Start" component={Start}></Stack.Screen>
         <Stack.Screen name="Loading" component={Loading}></Stack.Screen>
         <Stack.Screen name="QRcode" component={QRcode}></Stack.Screen>
+        <Stack.Screen name="QRcodettg" component={QRcodettg}></Stack.Screen>
 
        </Stack.Navigator>
        </NavigationContainer>
